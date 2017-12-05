@@ -40,10 +40,6 @@ class GCSMap(MutableMapping):
             bucket = split_path(root)[0]
             if create:
                 self.gcs.mkdir(bucket)
-            elif not self.gcs.exists(bucket):
-                raise ValueError("Bucket %s does not exist."
-                        " Create bucket with the ``create=True`` keyword" %
-                        bucket)
 
     def clear(self):
         """Remove all keys below root - empties out mapping
