@@ -118,7 +118,7 @@ class GCSFS(Operations):
 
 
 def main(mountpofloat, root):
-    FUSE(GCSFS(root, project='continuum-compute'), mountpofloat, nothreads=True, foreground=True)
+    FUSE(GCSFS(root), mountpofloat, nothreads=True, foreground=True)
 
 if __name__ == '__main__':
     main(sys.argv[2], sys.argv[1])
